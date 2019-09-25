@@ -1,0 +1,9 @@
+# No dependency specified; if hellomake.h is changed, make will not recompile
+
+CC=gcc  # C compiler to use
+CFLAGS=-I.  # the list of flags to pass to the compilation command
+
+hellomake: hellomake.o hellofunc.o  # Note that here we changed files to ".o"!
+                                    # make knows it must first compile the .c versions individually, and then build the executable hellomake
+	$(CC) -o hellomake hellomake.o hellofunc.o  # here, changed to ".o" too
+

@@ -1,0 +1,3 @@
+hellomake: hellomake.c hellofunc.c  # this list of files let make know that the rule hellomake needs to be executed if any of those files change
+	gcc -o hellomake hellomake.c hellofunc.c -I.  # including "-I." lets gcc look in the current directory (.) for the include file hellomake.h.
+

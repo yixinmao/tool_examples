@@ -1,0 +1,15 @@
+# Further generalize expressions
+
+CC=gcc
+CFLAGS=-I.
+DEPS=hellomake.h  # All include files
+OBJ = hellomake.o hellofunc.o  # All object files
+
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+hellomake: $(OBJ)
+	$(CC) -o $@ $^ $(CFLAGS)  # "$@": left side of the :
+                              # "$^": right side of the :
+
+
